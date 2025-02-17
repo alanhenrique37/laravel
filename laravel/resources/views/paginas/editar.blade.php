@@ -1,17 +1,17 @@
 <x-layout titulo="Editar">
-    <form action="" method="GET">
+    <form action="../atualizar/{{$dado->id}}" method="GET">
 
         <label>Id</label>
-        <input type="number" id="number" name="number" value="" disabled required/>
+        <input type="number" id="number" name="number" value="{{$dado->id}}" disabled required/>
         <br><br>
 
         <label>Data</label>
-        <input type="date" id="dataEvento" name="dataEvento" value="" required>
+        <input type="date" id="dataEvento" name="dataEvento" value="{{$dado->dataEvento}}" required>
         <br><br>
 
 
         <label>Descrição</label>
-        <input type="text" name="descricao" id="descricao" value="" required/>
+        <input type="text" name="descricao" id="descricao" value="{{$dado->descricao}}" required/>
         <br><br>
 
         <button type="submit">Atualizar</button>
@@ -31,14 +31,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            Tem certeza que deseja excluir: ?
+            Tem certeza que deseja excluir o compromisso: {{$dado->descicao}}?
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-            <a type="button" class="btn btn-primary" href="/excluir/">Sim</a>
+            <a type="button" class="btn btn-primary" href="/excluir/{{$dado->id}}">Sim</a>
         </div>
         </div>
     </div>
     </div>
     <a href="/"><button>Voltar</button></a>
-</x-layout>
+</x-layout>   
